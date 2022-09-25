@@ -40,14 +40,13 @@ body {
     bottom: 0;
 }
 
-/*.clouds {
+.clouds {
     margin-top: 70px;
     width: 300px;
     position: absolute;
     animation: clouds-animation 20s infinite linear;
 }
 
- Clouds 
 @keyframes clouds-animation {
 
     from {
@@ -58,7 +57,7 @@ body {
         right: 100%;
     }
 }
-*/ 
+
 .ground {
     --left: 0;
     position:absolute;
