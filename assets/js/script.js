@@ -1,5 +1,6 @@
 import { setupGround, updateGround } from "./ground.js"
 import { updateMario, setupMario } from "./mario.js"
+import { updatePipe, setupPipe } from "./pipe.js"
 
 
 const GAMEBOARD_WIDTH = 200
@@ -31,6 +32,7 @@ function update(time) {
     
     updateGround(delta, speedScale)
     updateMario(delta,speedScale)
+    updatePipe(delta,speedScale)
     updateSpeedScale(delta)
     updateScore(delta)
 
@@ -57,6 +59,7 @@ function handleStart(){
     score = 0
     setupGround()
     setupMario()
+    setupPipe()
     window.requestAnimationFrame(update)
 }
 
