@@ -1,6 +1,6 @@
 import { setupGround, updateGround } from "./ground.js"
-import { updateMario, setupMario } from "./mario.js"
-import { updatePipe, setupPipe } from "./pipe.js"
+import { updateMario, setupMario, getMarioRect, setMarioLose } from "./mario.js"
+import { updatePipe, setupPipe, getPipeRects } from "./pipe.js"
 
 
 const GAMEBOARD_WIDTH = 200
@@ -9,6 +9,10 @@ const SPEED_SCALE_INCREASE = .00001
 
 const gameBoardElem = document.querySelector('[data-gameBoard]')
 const scoreElem = document.querySelector("[data-score]")
+
+const open = document.querySelector('.info-button');
+const modal = document.querySelector('.modal');
+const close = document.querySelector('.modal_close');
 
 setPixelTogameBoardScale()
 window.addEventListener("resize", setPixelTogameBoardScale)
@@ -35,9 +39,25 @@ function update(time) {
     updatePipe(delta,speedScale)
     updateSpeedScale(delta)
     updateScore(delta)
+    if (checkLose()) return handleLose()
 
     lastTime = time
     window.requestAnimationFrame(update)
+}
+
+function checkLose() {
+    const marioRect = getMarioRect()
+    return  getPipeRects().some(rect => isCollision(rect, marioRect))
+}
+
+function isCollision(rect1, rect2){
+    return (
+        rect1.left < rect2.right &&
+        rect1.top < rect2.bottom &&
+        rect1.right < rect2.left &&
+        rect1.bottom > rect2.top
+    )
+
 }
 
 /* function to update the speed scale */
@@ -63,6 +83,13 @@ function handleStart(){
     window.requestAnimationFrame(update)
 }
 
+function handleLose(){
+    setMarioLose()
+    setTimeout(() => {
+        document.addEventListener("keydown", handleStart, {once: true})
+    }, 100)
+}
+
 function setPixelTogameBoardScale(){
     let gameBoardToPixelScale
     if(window.innerWidth / window.innerHeight < GAMEBOARD_WIDTH / GAMEBOARD_HEIGHT){
@@ -75,3 +102,11 @@ function setPixelTogameBoardScale(){
     gameBoardElem.style.height = `${GAMEBOARD_HEIGHT * gameBoardToPixelScale}px`
 }
 
+/* modal */
+open.addEventListener('click', ()=>{
+    modal.classList.add('show');
+  });
+  
+  close.addEventListener('click', ()=>{
+    modal.classList.remove('show');
+  });

@@ -26,6 +26,14 @@ export function updateMario(delta, speedScale){
     handleJump(delta)
 }
 
+export function getMarioRect(){
+    return marioElem.getBoundingClientRect()
+}
+
+export function setMarioLose(){
+    marioElem.src = "./assets/images/game-over.png"
+}
+
 function handleJump(delta){
     if (!isJumping) return
 

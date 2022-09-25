@@ -9,6 +9,7 @@ let nextPipeTime
 
 export function setupPipe(){
     nextPipeTime = PIPE_INTERVAL_MIN
+    /*with this line, we remove the cactus once we lost */
     document.querySelectorAll("[data-pipe]"). forEach(pipe => {
         pipe.remove()
     })
