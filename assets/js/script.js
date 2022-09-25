@@ -3,12 +3,13 @@ import { updateMario, setupMario, getMarioRect, setMarioLose } from "./mario.js"
 import { updatePipe, setupPipe, getPipeRects } from "./pipe.js"
 
 
-const GAMEBOARD_WIDTH = 200
-const GAMEBOARD_HEIGHT = 100
+const GAMEBOARD_WIDTH = 100
+const GAMEBOARD_HEIGHT = 45
 const SPEED_SCALE_INCREASE = .00001
 
 const gameBoardElem = document.querySelector('[data-gameBoard]')
 const scoreElem = document.querySelector("[data-score]")
+/*const startScreenElem = document.querySelector("[data-start-screen]")*/
 
 const open = document.querySelector('.info-button');
 const modal = document.querySelector('.modal');
@@ -16,11 +17,7 @@ const close = document.querySelector('.modal_close');
 
 setPixelTogameBoardScale()
 window.addEventListener("resize", setPixelTogameBoardScale)
-
-
 document.addEventListener("keydown", handleStart, {once: true})
-
-setupGround()
 
 let lastTime
 let speedScale
@@ -54,10 +51,9 @@ function isCollision(rect1, rect2){
     return (
         rect1.left < rect2.right &&
         rect1.top < rect2.bottom &&
-        rect1.right < rect2.left &&
+        rect1.right > rect2.left &&
         rect1.bottom > rect2.top
     )
-
 }
 
 /* function to update the speed scale */
@@ -71,7 +67,6 @@ function updateScore(delta){
     scoreElem.textContent = Math.floor(score)
 }
 
-
 /* starting the game with press button and the score starts in 0*/
 function handleStart(){
     lastTime = null
@@ -80,13 +75,15 @@ function handleStart(){
     setupGround()
     setupMario()
     setupPipe()
+   /* startScreenElem.classList.add("hide") */
     window.requestAnimationFrame(update)
 }
 
 function handleLose(){
     setMarioLose()
     setTimeout(() => {
-        document.addEventListener("keydown", handleStart, {once: true})
+        document.addEventListener("keydown", handleStart, {once:true})
+        /* startScreenElem.classList.remove("hide") */
     }, 100)
 }
 

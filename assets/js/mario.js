@@ -1,7 +1,7 @@
 import { getCustomProperty, incrementCustomProperty, setCustomProperty } from "./updateCustomProperty.js"
 
 const marioElem = document.querySelector("[data-mario]")
-const JUMP_SPEED = 0.45
+const JUMP_SPEED = 0.27
 const GRAVITY = 0.0015
 const MARIO_FRAME_COUNT = 2
 const FRAME_TIME = 100
@@ -34,6 +34,18 @@ export function setMarioLose(){
     marioElem.src = "./assets/images/game-over.png"
 }
 
+function handleRun(delta, speedScale){
+    if (isJumping) {
+        marioElem.src = `./assets/images/mario.gif`
+        return 
+      } 
+         
+    currentFrameTime = delta * speedScale   
+        marioElem.src = `./assets/images/mario.gif`
+    
+     
+}
+
 function handleJump(delta){
     if (!isJumping) return
 
@@ -54,20 +66,7 @@ function onJump(e){
     isJumping = true
 }
 
-function handleRun(delta, speedScale){
-   /* if (isJumping) {
-        marioElem.src = `./assets/images/mario.gif`
-        return
-    }
 
-    if (currentFrameTime >= FRAME_TIME){
-        marioFrame = (marioFrame + 1) % MARIO_FRAME_COUNT
-        marioElem.src = `./assets/images/mario-${marioFrame}.gif`
-        currentFrameTime -= FRAME_TIME
-    }
-    */
-    currentFrameTime += delta * speedScale
-}
 
 
 

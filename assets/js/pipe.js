@@ -6,7 +6,6 @@ const PIPE_INTERVAL_MAX = 2000
 const gameBoardElem = document.querySelector("[data-gameBoard")
 
 let nextPipeTime
-
 export function setupPipe(){
     nextPipeTime = PIPE_INTERVAL_MIN
     /*with this line, we remove the cactus once we lost */
@@ -16,7 +15,7 @@ export function setupPipe(){
 }
 
 export function updatePipe(delta, speedScale){
-    document.querySelectorAll("[data-pipe]"). forEach(pipe => {
+    document.querySelectorAll("[data-pipe]").forEach(pipe => {
         incrementCustomProperty(pipe, "--left", delta * speedScale * SPEED * -1)
         if (getCustomProperty(pipe, "--left") <= -100){
             pipe.remove()
@@ -31,7 +30,7 @@ export function updatePipe(delta, speedScale){
 }
 
 export function getPipeRects(){
-    return [...document.querySelectorAll("[data-pipe")].map(pipe => {
+    return [...document.querySelectorAll("[data-pipe]")].map(pipe => {
         return pipe.getBoundingClientRect()
     })
 }
