@@ -42,8 +42,10 @@ body {
 
 .clouds {
     margin-top: 70px;
-    width: 300px;
+    width: 200px;
     position: absolute;
+    left: calc(var(--left) * 1%);
+    height: 20%;
     animation: clouds-animation 20s infinite linear;
 }
 
