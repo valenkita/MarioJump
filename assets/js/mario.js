@@ -34,16 +34,18 @@ export function setMarioLose(){
     marioElem.src = "./assets/images/game-over.png"
 }
 
-function handleRun(delta, speedScale){
+ function handleRun(delta, speedScale){
     if (isJumping) {
-        marioElem.src = `./assets/images/mario.gif`
+        marioElem.src = `./assets/images/marioJump.png`
         return 
-      } 
-         
-    currentFrameTime = delta * speedScale   
-        marioElem.src = `./assets/images/mario.gif`
-    
-     
+      }
+
+    if (currentFrameTime >= FRAME_TIME){
+        marioFrame = (marioFrame + 1) % MARIO_FRAME_COUNT
+        marioElem.src = `/assets/images/mario-run-${marioFrame}.png`
+        currentFrameTime -= FRAME_TIME
+    }
+    currentFrameTime += delta * speedScale  
 }
 
 function handleJump(delta){
