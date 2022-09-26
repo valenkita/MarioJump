@@ -78,7 +78,7 @@ function handleStart(){
     setupGround()
     setupMario()
     setupPipe()
-   restartScreenElem.classList.add("hide")
+    restartScreenElem.classList.add("hide")
     window.requestAnimationFrame(update)
 }
 

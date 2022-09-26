@@ -12,7 +12,7 @@ let currentFrameTime
 let yVelocity
 
 export function setupMario(){
-    isJumping = false
+    isJumping = true
     marioFrame = 0
     currentFrameTime = 0
     yVelocity = 0
