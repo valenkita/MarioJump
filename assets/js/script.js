@@ -1,6 +1,6 @@
 import { setupGround, updateGround } from "./ground.js"
 import { updateMario, setupMario, getMarioRect, setMarioLose } from "./mario.js"
-import { updatePipe, setupPipe, getPipeRects } from "./pipe.js"
+import { updatePipe, setupPipe, getPipeRects, getCloudsRect } from "./pipe.js"
 
 
 const GAMEBOARD_WIDTH = 100
@@ -9,7 +9,8 @@ const SPEED_SCALE_INCREASE = .00001
 
 const gameBoardElem = document.querySelector('[data-gameBoard]')
 const scoreElem = document.querySelector("[data-score]")
-/*const startScreenElem = document.querySelector("[data-start-screen]")*/
+const clouds = document.querySelector('.clouds');
+const restartScreenElem = document.querySelector("[data-restart-screen]")
 
 const open = document.querySelector('.info-button');
 const modal = document.querySelector('.modal');
@@ -47,6 +48,8 @@ function checkLose() {
     return  getPipeRects().some(rect => isCollision(rect, marioRect))
 }
 
+
+
 function isCollision(rect1, rect2){
     return (
         rect1.left < rect2.right &&
@@ -75,7 +78,7 @@ function handleStart(){
     setupGround()
     setupMario()
     setupPipe()
-   /* startScreenElem.classList.add("hide") */
+   restartScreenElem.classList.add("hide")
     window.requestAnimationFrame(update)
 }
 
@@ -83,7 +86,7 @@ function handleLose(){
     setMarioLose()
     setTimeout(() => {
         document.addEventListener("keydown", handleStart, {once:true})
-        /* startScreenElem.classList.remove("hide") */
+        restartScreenElem.classList.remove("hide")
     }, 100)
 }
 
@@ -98,6 +101,8 @@ function setPixelTogameBoardScale(){
     gameBoardElem.style.width = `${GAMEBOARD_WIDTH * gameBoardToPixelScale}px`
     gameBoardElem.style.height = `${GAMEBOARD_HEIGHT * gameBoardToPixelScale}px`
 }
+
+
 
 /* modal */
 open.addEventListener('click', ()=>{
