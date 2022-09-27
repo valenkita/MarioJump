@@ -1,3 +1,4 @@
+import { updateCloud, setupCloud } from "./clouds.js"
 import { setupGround, updateGround } from "./ground.js"
 import { updateMario, setupMario, getMarioRect, setMarioLose } from "./mario.js"
 import { updatePipe, setupPipe, getPipeRects} from "./pipe.js"
@@ -35,6 +36,7 @@ function update(time) {
     const delta = time - lastTime
     
     updateGround(delta, speedScale)
+    updateCloud(delta, speedScale)
     updateMario(delta,speedScale)
     updatePipe(delta,speedScale)
     updateSpeedScale(delta)
@@ -80,6 +82,7 @@ function handleStart(){
     setupGround()
     setupMario()
     setupPipe()
+    setupCloud()
     restartScreenElem.classList.add("hide")
     window.requestAnimationFrame(update)
 }
@@ -92,17 +95,8 @@ function handleLose(){
     }, 100)
 }
 
-const clouds = document.querySelector('.clouds');
-const loop = setInterval(() => {
-    console.log('loop')
-    const cloudsPosition = clouds.offsetLeft;
-    if (checkLose()){
-        clouds.style.animation = 'none';
-        clouds.style.left = `${cloudsPosition}px`;
-        
-        clearInterval(loop)
-    }
-},10)
+
+
 
 
 function setPixelTogameBoardScale(){
