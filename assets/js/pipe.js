@@ -48,7 +48,3 @@ function randomNumberBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-/* clouds */  
-export function getCloudsRect(){
-    return cloudsElem.getBoundingClientRect()
-}

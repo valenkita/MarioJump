@@ -1,6 +1,6 @@
 import { setupGround, updateGround } from "./ground.js"
 import { updateMario, setupMario, getMarioRect, setMarioLose } from "./mario.js"
-import { updatePipe, setupPipe, getPipeRects, getCloudsRect } from "./pipe.js"
+import { updatePipe, setupPipe, getPipeRects} from "./pipe.js"
 
 
 const GAMEBOARD_WIDTH = 100
@@ -103,6 +103,7 @@ function setPixelTogameBoardScale(){
 }
 
 
+ 
 
 /* modal */
 open.addEventListener('click', ()=>{

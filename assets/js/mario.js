@@ -42,7 +42,7 @@ export function setMarioLose(){
 
     if (currentFrameTime >= FRAME_TIME){
         marioFrame = (marioFrame + 1) % MARIO_FRAME_COUNT
-        marioElem.src = `/assets/images/mario-run-${marioFrame}.png`
+        marioElem.src = `./assets/images/mario-run-${marioFrame}.png`
         currentFrameTime -= FRAME_TIME
     }
     currentFrameTime += delta * speedScale  
