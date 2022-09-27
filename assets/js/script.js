@@ -24,17 +24,6 @@ let lastTime
 let speedScale
 let score
 
-const clouds = document.querySelector('.clouds');
-const loop = setInterval(() => {
-    console.log('loop')
-    const cloudsPosition = clouds.offsetLeft;
-    if (checkLose()){
-        clouds.style.animation = 'none';
-        clouds.style.left = `${cloudsPosition}px`;
-        
-        clearInterval(loop)
-    }
-},10)
 
 
 function update(time) {
@@ -102,6 +91,19 @@ function handleLose(){
         restartScreenElem.classList.remove("hide")
     }, 100)
 }
+
+const clouds = document.querySelector('.clouds');
+const loop = setInterval(() => {
+    console.log('loop')
+    const cloudsPosition = clouds.offsetLeft;
+    if (checkLose()){
+        clouds.style.animation = 'none';
+        clouds.style.left = `${cloudsPosition}px`;
+        
+        clearInterval(loop)
+    }
+},10)
+
 
 function setPixelTogameBoardScale(){
     let gameBoardToPixelScale
