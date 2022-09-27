@@ -48,11 +48,19 @@ footer p {
 
 }
 
+h4 {
+  position: absolute;
+  right: 10vmin;
+  font-size: 2vmin;
+  top:1vmin;
+}
+
 .score{
     position:absolute;
     font-size: 3vmin;
-    right: 1vmin;
-    top:1vmin;
+    right: 2vmin;
+    top:3vmin;
+    
 }
 
 .restart-screen {
