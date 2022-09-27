@@ -22,7 +22,7 @@ footer {
   position:absolute;
   width: 100%;
   bottom: 0;
-  background-image: url(/assets/images/groundFooter.png);
+  background-image: url(./assets/images/groundFooter.png);
   padding-top: 0; 
 }
 
