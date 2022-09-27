@@ -3,13 +3,13 @@ import { updateMario, setupMario, getMarioRect, setMarioLose } from "./mario.js"
 import { updatePipe, setupPipe, getPipeRects} from "./pipe.js"
 
 
+
 const GAMEBOARD_WIDTH = 100
 const GAMEBOARD_HEIGHT = 45
 const SPEED_SCALE_INCREASE = .00001
 
 const gameBoardElem = document.querySelector('[data-gameBoard]')
 const scoreElem = document.querySelector("[data-score]")
-const clouds = document.querySelector('.clouds');
 const restartScreenElem = document.querySelector("[data-restart-screen]")
 
 const open = document.querySelector('.info-button');
@@ -23,6 +23,19 @@ document.addEventListener("keydown", handleStart, {once: true})
 let lastTime
 let speedScale
 let score
+
+const clouds = document.querySelector('.clouds');
+const loop = setInterval(() => {
+    console.log('loop')
+    const cloudsPosition = clouds.offsetLeft;
+    if (checkLose()){
+        clouds.style.animation = 'none';
+        clouds.style.left = `${cloudsPosition}px`;
+        
+        clearInterval(loop)
+    }
+},10)
+
 
 function update(time) {
     if (lastTime == null) {

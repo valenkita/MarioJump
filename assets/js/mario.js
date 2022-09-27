@@ -16,7 +16,7 @@ export function setupMario(){
     marioFrame = 0
     currentFrameTime = 0
     yVelocity = 0
-    setCustomProperty(marioElem, "--botom", 0)
+    setCustomProperty(marioElem, "--botom", 6)
     document.removeEventListener("keydown", onJump)
     document.addEventListener("keydown", onJump)
 }
@@ -53,8 +53,8 @@ function handleJump(delta){
 
     incrementCustomProperty(marioElem, "--bottom", yVelocity * delta)
     
-    if(getCustomProperty(marioElem, "--bottom") <= 0){
-        setCustomProperty(marioElem, "--bottom", 0)
+    if(getCustomProperty(marioElem, "--bottom") <=6.5 ){
+        setCustomProperty(marioElem, "--bottom",6.5 )
         isJumping = false
     }
     

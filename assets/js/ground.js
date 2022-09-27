@@ -20,3 +20,4 @@ export function updateGround(delta, speedScale){
     })
 
 }
+
