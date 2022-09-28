@@ -1,6 +1,6 @@
 # Jump Mario Jump!
 
-![image](media/20819deb333a968da02c36c35e8b49be.png)
+![](media/20819deb333a968da02c36c35e8b49be.png)
 
 Jump Mario Jump is a browser game for people of all ages. It is based on the No Internet Game as the T-Rex Game, Steve the Jumping Dinosaur, or Dino Runner and initially codenamed Project Bolan, is a built-in browser game in the Google Chrome Web Browser. The game was created by Sebastien Gabriel in 2014, and can be accessed by hitting the space bar when in offline mode on Google Chrome. To bring added value and interest the gameplay is complemented by the use of nostalgic designs from the popular Nintendo game Mario Bros’ and uses the title character Mario as the protagonist.
 
@@ -63,7 +63,7 @@ Disclaimer: This is part of a project and is recognised that the character of Ma
 
 This game was designed to be played on a laptop or desktop computer, as it is necessary to use a keyboard to play. The webpage is fully responsive, so it can be played on a tablet if the user has an external keyboard. It’s also responsive on mobile devices but can only be played using a spacebar, so the user needs to have a keyboard.
 
-![image](media/f81ba639f6e0be8da8912c17c96cfb5c.png)
+![Diagram Description automatically generated](media/f81ba639f6e0be8da8912c17c96cfb5c.png)
 
 #### Modal How to play
 
