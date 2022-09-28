@@ -1,6 +1,6 @@
 # Jump Mario Jump!
 
-![](media/20819deb333a968da02c36c35e8b49be.png)
+![image](https://user-images.githubusercontent.com/26796418/192855932-70bebf02-4c06-45a8-b7cf-8f5021313d21.png)
 
 Jump Mario Jump is a browser game for people of all ages. It is based on the No Internet Game as the T-Rex Game, Steve the Jumping Dinosaur, or Dino Runner and initially codenamed Project Bolan, is a built-in browser game in the Google Chrome Web Browser. The game was created by Sebastien Gabriel in 2014, and can be accessed by hitting the space bar when in offline mode on Google Chrome. To bring added value and interest the gameplay is complemented by the use of nostalgic designs from the popular Nintendo game Mario Bros’ and uses the title character Mario as the protagonist.
 
@@ -63,7 +63,7 @@ Disclaimer: This is part of a project and is recognised that the character of Ma
 
 This game was designed to be played on a laptop or desktop computer, as it is necessary to use a keyboard to play. The webpage is fully responsive, so it can be played on a tablet if the user has an external keyboard. It’s also responsive on mobile devices but can only be played using a spacebar, so the user needs to have a keyboard.
 
-![Diagram Description automatically generated](media/f81ba639f6e0be8da8912c17c96cfb5c.png)
+![image](https://user-images.githubusercontent.com/26796418/192856033-ad3b710a-5232-41c7-aa78-8a70d8fd7717.png)
 
 #### Modal How to play
 
@@ -71,13 +71,13 @@ This Is a modal that is displayed when you click on the “How to play” button
 
 The modal will disappear when the user clicks the “Close” button.
 
-![Graphical user interface, application, Teams Description automatically generated](media/8f10c4e41888e36222af94ac314cb54d.png)
+![image](https://user-images.githubusercontent.com/26796418/192856099-d5bcd39e-57ba-4815-87db-dddbcc96e183.png)
 
 #### Score
 
 Displays the current score, calculated by a timer. The timer resets to 0 every time Mario crashes with a pipe. The score is displayed in the top right corner of the screen. The score is calculated at 10 points per second of gameplay. The score is infinite.
 
-![Chart Description automatically generated with low confidence](media/169038f34cb05d7d3b37b2196d340ced.png)
+![image](https://user-images.githubusercontent.com/26796418/192856156-9dd628b5-e2ea-4da4-b14c-9d4060caf8cb.png)
 
 #### Speed
 
@@ -91,13 +91,13 @@ The pipes will appear randomly at are set at the same speed as the ground for a 
 
 Once Mario Crashes, a message will be displayed. This message contains the instruction that if the user presses any key, the game will restart. The score and speed are reset, and the user has another try. The number of tries are unlimited as the custom in these games.
 
-![A picture containing diagram Description automatically generated](media/692a90157546b6ce6cfc4dfd931aaf15.png)
+![image](https://user-images.githubusercontent.com/26796418/192856218-27f97b38-07d1-49e3-9c9a-e325bc46671d.png)
 
 #### Footer
 
 It is located at the bottom of the site and contains the name of the creator and a link to the developers Github.
 
-![](media/2a43060c1c50723bda46eff5d0326436.png)
+![image](https://user-images.githubusercontent.com/26796418/192856247-433dc097-9c4b-448b-bdc1-77569b1932a7.png)
 
 #### Future Features:
 
@@ -224,13 +224,13 @@ The footer displays the creators details and link to their GitHub for further in
 
 Doesn’t show any warning or error, all features are working as intended.
 
-![Graphical user interface, text, application, email Description automatically generated](media/73f9e5242413c6ca8cdc6174b3b409d6.png)
+![image](https://user-images.githubusercontent.com/26796418/192856368-b49e6e8b-acc3-468a-8408-946ecd4a92a8.png)
 
 **W3c** [**CSS Validator**](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalenkita.github.io%2FMarioJump%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 Doesn’t show any error or warning, all features work as intended.
 
-![Graphical user interface, text, application, email Description automatically generated](media/f3007950389006498f9b07136b982b5f.png)
+![image](https://user-images.githubusercontent.com/26796418/192856397-52c19cd9-04b9-4827-91f3-29c7e7819fb2.png)
 
 [Lighthouse testing](https://www.webpagetest.org/result/220927_AiDcRC_GH1/)
 
@@ -240,13 +240,15 @@ Best practice 63: Score is reduced as the site is not protected with HTTPS
 
 Score is also reduced as using a low-resolution image, however this is a design choice to meet the objective of nostalgic and vintage feel. Some browser errors were logged as a result of not operating a HTTPS.
 
+![image](https://user-images.githubusercontent.com/26796418/192856631-9a812183-1b41-4824-a15a-cdd670dd8757.png)
+
 ### Unfixed Bugs
 
 -   The modal does not adapt fully to the size of the screen
 -   When the game starts for the very first time, some clouds appear in the left side of the screen
 -   The background image is not visible in github pages, but it is visible in the server.
 
-![A screenshot of a computer Description automatically generated with medium confidence](media/ffec543e78bd95a1ae09eb7abadc8d1a.png)
+
 
 ### Deployment
 
