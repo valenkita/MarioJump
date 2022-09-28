@@ -246,7 +246,6 @@ Score is also reduced as using a low-resolution image, however this is a design 
 
 -   The modal does not adapt fully to the size of the screen
 -   When the game starts for the very first time, some clouds appear in the left side of the screen
--   The background image is not visible in github pages, but it is visible in the server.
 
 
 
